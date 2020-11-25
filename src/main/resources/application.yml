@@ -1,0 +1,16 @@
+service:
+  movies:
+    search:
+      title:
+        url: https://api.themoviedb.org/3/search/movie?api_key=%s&query=%s
+      id:
+        url: https://api.themoviedb.org/3/movie/%d?api_key=%s
+remote:
+  maxTotalConnect: 0
+  maxConnectPerRoute: 200
+  connectTimeout: 2000
+  readTimeout: 3000
+spring:
+  retry:
+    backOffPolicy: 1000
+    maxAttempts: 2
